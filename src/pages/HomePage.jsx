@@ -3,7 +3,7 @@ import { GET_POSTS } from "../service/query"
 
 const HomePage = () =>{
     const { loading, error ,data } = useQuery(GET_POSTS, {
-       variables:{ 
+       Variables:{ 
             input:{
                 page: 1,
                 limit: 10
@@ -11,9 +11,12 @@ const HomePage = () =>{
         }
     });
 
+    //handle loading and error states
       if (loading) return "Loading...";
       if (error) return `Error! ${error.message}`;
-
+ 
+    
+    //return data of the api
     return(
     <>
     {data?.posts?.data?.map(get => 
