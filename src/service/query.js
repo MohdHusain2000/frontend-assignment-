@@ -5,9 +5,9 @@ import { gql } from "@apollo/client"
 // The query allow you to get data from the Api using graphql.
 
 export const GET_POSTS = gql`
-  query GetPosts($input: GetPostsInput!) {
+  query GetPosts($page: Int!, $limit: Int!) {
     posts(options: {
-      paginate: { page: $input.page, limit: $input.limit }
+      paginate: { page: $page, limit: $limit }
     }) {
       data {
         id
@@ -19,8 +19,8 @@ export const GET_POSTS = gql`
 `;
 
 export const GET_POST = gql`
-query GetPost($input: GetPostInput!) {
-  post(id: $input.id) {
+query GetPost($id: ID!) {
+  post(id: $id) {
     id
     title
     body

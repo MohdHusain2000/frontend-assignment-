@@ -5,11 +5,10 @@ import { GET_POST } from "../service/query";
 const DetailsPage = () => {
   const { id } = useParams(); 
 
+  // the call of api differ from the orginal becuase of removing input.
   const { loading, error, data } = useQuery(GET_POST, {
     variables: {
-      input: {
         id: Number(id),
-      }
     }
   });
 

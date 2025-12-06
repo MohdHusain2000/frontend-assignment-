@@ -16,12 +16,11 @@ const UpdateForm = () => {
     body: "",
   });
 
+  // the call of api differ from the orginal becuase of removing input.
   // the query will be fetch to get the data of single post based in id and update the form 
   const { loading, error, data } = useQuery(GET_POST, {
     variables: {
-      input: {
         id: Number(id),
-      },
     },
   });
 
@@ -44,15 +43,14 @@ const UpdateForm = () => {
     }));
   };
 
+  // the call of api differ from the orginal becuase of removing input.
   const handleSubmit = async (e) => {
     e.preventDefault();
     await updatePost({
       variables: {
-        input: {
           id: Number(id),
           title: formData.title,
           body: formData.body,
-        },
       },
     });
 

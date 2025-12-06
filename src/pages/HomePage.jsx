@@ -4,11 +4,10 @@ import { GET_POSTS } from "../service/query"
 //https://dev.to/lucis/update-apollo-cache-after-a-mutation-and-get-instant-benefits-on-your-ui-1c3b
 const HomePage = () =>{
     const { loading, error ,data } = useQuery(GET_POSTS, {
-       variables:{ 
-            input:{
+        // the call of api differ from the Document becuase of removing input and avoid errors.
+        variables:{ 
                 page: 1,
                 limit: 10
-            }
         }
     });
 
