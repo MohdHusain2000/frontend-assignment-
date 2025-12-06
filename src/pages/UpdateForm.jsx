@@ -5,6 +5,7 @@ import { GET_POST, UPDATE_POSTS } from "../service/query";
 
 //https://dev.to/lucis/update-apollo-cache-after-a-mutation-and-get-instant-benefits-on-your-ui-1c3b
 const UpdateForm = () => {
+    
   // useParams to get id value from url
   const { id } = useParams(); 
   const navigate = useNavigate();

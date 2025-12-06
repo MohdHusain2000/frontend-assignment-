@@ -6,7 +6,7 @@ import { useState } from 'react';
 // https://dev.to/rowsanali/using-react-hooks-for-form-handling-7bl
 const AddForm = () => {
 
-// The useState hook will be used to add state to functional components.
+  // The useState hook will be used to add state to functional components.
   const [formData, setFormData] = useState({
     title: '',
     body: ''
@@ -14,7 +14,7 @@ const AddForm = () => {
 
   const [createPost, { loading, error, data }] = useMutation(CREATE_POSTS);
 
-// using to update the field of form by adding the new value
+    // using to update the field of form by adding the new value
    const handleInputChange = (e) => {
     const { name, value } = e.target;
     setFormData({

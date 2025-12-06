@@ -12,6 +12,7 @@ export const CREATE_POSTS = gql`
   }
 `;
 
+
 export const UPDATE_POSTS =  gql`
 mutation UpdatePost($input: UpdatePostInputWithId!) {
   updatePost(id: $input.id, input: {
