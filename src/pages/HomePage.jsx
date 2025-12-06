@@ -1,9 +1,10 @@
-import { useQuery } from "@apollo/client/react"
+import { useQuery } from "@apollo/client"
 import { GET_POSTS } from "../service/query"
 
+//https://dev.to/lucis/update-apollo-cache-after-a-mutation-and-get-instant-benefits-on-your-ui-1c3b
 const HomePage = () =>{
     const { loading, error ,data } = useQuery(GET_POSTS, {
-       Variables:{ 
+       variables:{ 
             input:{
                 page: 1,
                 limit: 10
