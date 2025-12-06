@@ -7,7 +7,9 @@ const DetailsPage = () => {
 
   const { loading, error, data } = useQuery(GET_POST, {
     variables: {
+      input: {
         id: Number(id),
+      }
     }
   });
 

@@ -28,8 +28,10 @@ const AddForm = () => {
 
     await createPost({
       variables: {
+        input: {
           title: formData.title,
           body: formData.body,
+        }
       }
     });
 

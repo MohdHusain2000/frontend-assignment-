@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react";
-import { useParams, useNavigate } from "react-router-dom";
+import { useParams, useNavigate, Link } from "react-router-dom";
 import { useQuery, useMutation } from "@apollo/client/react";
 import { GET_POST } from "../service/query";
 import { UPDATE_POSTS } from "../service/mutation";
-import { Link } from "react-router-dom";
+
 
 //https://dev.to/lucis/update-apollo-cache-after-a-mutation-and-get-instant-benefits-on-your-ui-1c3b
 const UpdateForm = () => {
@@ -19,8 +19,9 @@ const UpdateForm = () => {
   // the query will be fetch to get the data of single post based in id and update the form 
   const { loading, error, data } = useQuery(GET_POST, {
     variables: {
+      input: {
         id: Number(id),
-      
+      },
     },
   });
 
@@ -47,9 +48,11 @@ const UpdateForm = () => {
     e.preventDefault();
     await updatePost({
       variables: {
+        input: {
           id: Number(id),
           title: formData.title,
           body: formData.body,
+        },
       },
     });
 
@@ -65,6 +68,7 @@ const UpdateForm = () => {
     <Link to = "/"><button>Home</button></Link>
     <div>
       <h2>Edit Post: {id}</h2>
+
       <form onSubmit={handleSubmit}>
         <input
           type="text"

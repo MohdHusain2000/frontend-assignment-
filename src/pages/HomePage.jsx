@@ -5,9 +5,10 @@ import { GET_POSTS } from "../service/query"
 const HomePage = () =>{
     const { loading, error ,data } = useQuery(GET_POSTS, {
        variables:{ 
+            input:{
                 page: 1,
                 limit: 10
-            
+            }
         }
     });
 
@@ -19,7 +20,7 @@ const HomePage = () =>{
     //return data of the api
     return(
     <>
-    <h2>Welcome to react application</h2>
+    <h2>Welcome to react </h2>
     {data?.posts?.data?.map(get => 
         <div key={get.id}>
         <h4>{get.id}</h4>
