@@ -7,9 +7,7 @@ const DetailsPage = () => {
 
   const { loading, error, data } = useQuery(GET_POST, {
     variables: {
-      input: {
         id: Number(id),
-      }
     }
   });
 
@@ -23,7 +21,7 @@ const DetailsPage = () => {
     <div>
       <Link to="/"><button>Homepage</button></Link>
       
-      <Link to={`/edit/${post.id}`}><button>Edit</button></Link>
+      <Link to={`/edit/${getElementById.id}`}><button>Edit</button></Link>
 
       <h2>{getElementById.id}</h2>
       <h3>{getElementById.title}</h3>

@@ -5,10 +5,8 @@ import { ssrExportNameKey } from "vite/module-runner";
 // Create GraphQl query name GET_POSTS to fetch all data
 // The query allow you to get data from the Api using graphql.
 export const GET_POSTS = gql`
-  query GetPosts($input: GetPostsInput!) {
-    posts(options: {
-      paginate: { page: $input.page, limit: $input.limit }
-    }) {
+   query GetPosts($page: Int, $limit: Int) {
+    posts(options: { paginate: { page: $page, limit: $limit } }) {        
       data {
         id
         title
@@ -19,8 +17,8 @@ export const GET_POSTS = gql`
 `;
 
 export const GET_POST = gql`
-query GetPost($input: GetPostInput!) {
-  post(id: $input.id) {
+query GetPost($id: ID!) {
+  post(id: $id) {
     id
     title
     body
