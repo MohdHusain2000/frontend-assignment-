@@ -1,4 +1,4 @@
-import { useQuery } from "@apollo/client"
+import { useQuery } from "@apollo/client/react";
 import { GET_POSTS } from "../service/query"
 
 //https://dev.to/lucis/update-apollo-cache-after-a-mutation-and-get-instant-benefits-on-your-ui-1c3b

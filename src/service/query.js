@@ -18,7 +18,6 @@ export const GET_POSTS = gql`
   }
 `;
 
-
 export const GET_POST = gql`
 query GetPost($input: GetPostInput!) {
   post(id: $input.id) {

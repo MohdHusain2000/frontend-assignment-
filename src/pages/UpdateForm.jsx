@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
-import { useQuery, useMutation } from "@apollo/client";
-import { GET_POST, UPDATE_POSTS } from "../service/query";
+import { useQuery, useMutation } from "@apollo/client/react";
+import { GET_POST } from "../service/query";
+import { UPDATE_POSTS } from "../service/mutation";
 
 //https://dev.to/lucis/update-apollo-cache-after-a-mutation-and-get-instant-benefits-on-your-ui-1c3b
 const UpdateForm = () => {

@@ -1,4 +1,4 @@
-import { useMutation } from "@apollo/client";
+import { useMutation } from "@apollo/client/react";
 import { CREATE_POSTS } from "../service/mutation";
 import { useState } from 'react';
 
