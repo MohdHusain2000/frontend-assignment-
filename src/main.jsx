@@ -11,6 +11,7 @@ const client = new ApolloClient({
   cache: new InMemoryCache(),
 });
 
+
 //Since it is a small project the Apollo service can be added directly into main.jsx
 //The app will have access to Apollo service features.
 const root = ReactDOM.createRoot(document.getElementById('root'));

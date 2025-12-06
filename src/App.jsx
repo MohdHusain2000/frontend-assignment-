@@ -5,8 +5,9 @@ import HomePage from './pages/HomePage'
 import AddForm from './pages/AddForm'
 import UpdateForm from './pages/UpdateForm'
 import DetailsPage from './pages/DetailsPage'
-
+// adding routes for the pages
 const App = () => {
+
 
   return (
     <BrowserRouter>
